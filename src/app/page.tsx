@@ -11,15 +11,9 @@ const App = (): ReactElement => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <>
-      {mounted ? (
-        <main className="w-screen h-screen flex justify-center items-center">
-          <FormComp />
-        </main>
-      ) : (
-        <Spinner color="danger" size="lg" />
-      )}
-    </>
+    <main className="w-screen h-screen flex justify-center items-center">
+      {mounted ? <FormComp /> : <Spinner color="danger" size="lg" />}
+    </main>
   );
 };
 
