@@ -19,6 +19,11 @@ const FormInput = (props: {
       errorMessage={props.errors.title?.message}
       isInvalid={Boolean(props.errors.title?.message)}
       className="w-[498px]"
+      radius="sm"
+      variant="bordered"
+      classNames={{
+        input: ['h-[54px]'],
+      }}
     />
   );
 };
