@@ -14,6 +14,6 @@ export type TFieldData = {
   name: TFieldsName;
   label: string;
   placeholder: string;
-  type: 'text' | 'select';
+  type: 'text' | 'select' | 'textarea';
   variants?: string[];
 };

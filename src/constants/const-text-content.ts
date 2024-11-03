@@ -370,6 +370,6 @@ export const FORM_DATA: TFieldData[] = [
     name: 'synopsis',
     label: 'Синопсис',
     placeholder: 'Напишите краткое изложение',
-    type: 'text',
+    type: 'textarea',
   },
 ];

@@ -10,6 +10,7 @@ import type { TOptsForm } from '@/types/types';
 
 import FormInput from '../FormInput/FormInput';
 import FormSelect from '../FormSelect/FormSelect';
+import FormTextarea from '../FormTextarea/FormTextarea';
 
 const FormComp = (): ReactElement => {
   const {
@@ -69,7 +70,12 @@ const FormComp = (): ReactElement => {
             (item, index) =>
               index >= 4 &&
               ((item.type === 'text' && <FormInput key={index} item={item} register={register} errors={errors} />) ||
-                (item.type === 'select' && <FormSelect key={index} item={item} register={register} errors={errors} />)),
+                (item.type === 'select' && (
+                  <FormSelect key={index} item={item} register={register} errors={errors} />
+                )) ||
+                (item.type === 'textarea' && (
+                  <FormTextarea key={index} item={item} register={register} errors={errors} />
+                ))),
           )}
         </div>
       </div>
