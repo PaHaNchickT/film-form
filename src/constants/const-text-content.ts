@@ -111,6 +111,7 @@ export const FORM_DATA: TFieldData[] = [
     placeholder: 'Страна',
     type: 'select',
     variants: [
+      'Россия',
       'Австралия',
       'Австрия',
       'Азербайджан',
@@ -282,7 +283,6 @@ export const FORM_DATA: TFieldData[] = [
       'Республика Корея',
       'Республика Македония',
       'Реюньон',
-      'Россия',
       'Руанда',
       'Румыния',
       'Сальвадор',
