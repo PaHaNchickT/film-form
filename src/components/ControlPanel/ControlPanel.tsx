@@ -12,10 +12,8 @@ const ControlPanel = (props: { errors: FieldErrors<TOptsForm>; filled: boolean }
 
   return (
     <div className="flex justify-between">
-      <Button type="submit" color="default" isDisabled={Boolean(Object.keys(props.errors).length) || !props.filled}>
-        {TEXT_CONTENT.controlPanel.button}
-      </Button>
-      <div className="flex gap-2 items-center">
+      <div className='w-[248px]'></div>
+      <div className="flex gap-[2px] items-center">
         <Button
           className={`rotate-180 min-w-0 p-0 w-[40px] h-[40px] bg-transparent ${selected === 1 && 'opacity-0'}`}
           radius="full"
@@ -49,7 +47,14 @@ const ControlPanel = (props: { errors: FieldErrors<TOptsForm>; filled: boolean }
         </Button>
       </div>
 
-      <Button type="submit" color="default" isDisabled={Boolean(Object.keys(props.errors).length) || !props.filled}>
+      <Button
+        type="submit"
+        color="default"
+        radius="full"
+        isDisabled={Boolean(Object.keys(props.errors).length) || !props.filled}
+        className="w-[248px] h-[48px] relative p-0"
+      >
+        <ArrowIcon className="absolute right-[17.11px]" />
         {TEXT_CONTENT.controlPanel.button}
       </Button>
     </div>
