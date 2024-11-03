@@ -1,6 +1,5 @@
 /* eslint-disable react-compiler/react-compiler */
 /* eslint-disable react-hooks/exhaustive-deps */
-'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect, useState, type ReactElement } from 'react';
