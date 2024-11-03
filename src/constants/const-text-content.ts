@@ -1,3 +1,5 @@
+import type { TFieldData } from '@/types/types';
+
 export const TEXT_CONTENT = {
   header: {
     headerTitle: 'Тестик',
@@ -41,3 +43,48 @@ export const TEXT_CONTENT = {
     reloadBtn: 'Перезагрузить страницу',
   },
 };
+
+export const FORM_DATA: TFieldData[] = [
+  {
+    name: 'title',
+    label: 'Название проекта',
+    placeholder: 'Название',
+    type: 'text',
+  },
+  {
+    name: 'genre',
+    label: 'Жанр',
+    placeholder: 'Жанр',
+    type: 'text',
+  },
+  {
+    name: 'format',
+    label: 'Формат (для онлайн-платформ, большого экрана, интернета, другое)',
+    placeholder: 'Формат',
+    type: 'text',
+  },
+  {
+    name: 'unf',
+    label: '№ УНФ или отсутствует',
+    placeholder: '890-000-000-00-000',
+    type: 'text',
+  },
+  {
+    name: 'country',
+    label: 'Страна-производитель (копродукция)',
+    placeholder: 'Страна',
+    type: 'text',
+  },
+  {
+    name: 'price',
+    label: 'Сведения о сметной стоимости производства фильма на территории Нижегородской области, если есть',
+    placeholder: 'Сметная стоимость',
+    type: 'text',
+  },
+  {
+    name: 'synopsis',
+    label: 'Синопсис',
+    placeholder: 'Напишите краткое изложение',
+    type: 'text',
+  },
+];

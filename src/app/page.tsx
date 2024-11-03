@@ -3,7 +3,7 @@
 import { Spinner } from '@nextui-org/react';
 import { useEffect, useState, type ReactElement } from 'react';
 
-import QuestionForm from '@/components/Form/QuestionForm';
+import FormComp from '@/components/FormComp/FormComp';
 
 const App = (): ReactElement => {
   const [mounted, setMounted] = useState(false);
@@ -14,7 +14,7 @@ const App = (): ReactElement => {
     <>
       {mounted ? (
         <main className="w-screen h-screen flex justify-center items-center">
-          <QuestionForm />
+          <FormComp />
         </main>
       ) : (
         <Spinner color="danger" size="lg" />
