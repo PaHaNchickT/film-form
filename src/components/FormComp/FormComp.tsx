@@ -9,6 +9,7 @@ import { FORM_DATA } from '@/constants/const-text-content';
 import type { TOptsForm } from '@/types/types';
 
 import FormInput from '../FormInput/FormInput';
+import FormSelect from '../FormSelect/FormSelect';
 
 const FormComp = (): ReactElement => {
   const {
@@ -51,15 +52,24 @@ const FormComp = (): ReactElement => {
 
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-10">
-      <div className="flex gap-5">
-        <div className="flex flex-col gap-10">
+      <div className="flex gap-5 h-[443px]">
+        <div className="flex flex-col justify-between h-full">
           {FORM_DATA.map(
-            (item, index) => index < 4 && <FormInput key={index} item={item} register={register} errors={errors} />,
+            (item, index) =>
+              index < 4 &&
+              (item.type === 'text' ? (
+                <FormInput key={index} item={item} register={register} errors={errors} />
+              ) : (
+                <FormSelect key={index} item={item} register={register} errors={errors} />
+              )),
           )}
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col justify-between h-full">
           {FORM_DATA.map(
-            (item, index) => index >= 4 && <FormInput key={index} item={item} register={register} errors={errors} />,
+            (item, index) =>
+              index >= 4 &&
+              ((item.type === 'text' && <FormInput key={index} item={item} register={register} errors={errors} />) ||
+                (item.type === 'select' && <FormSelect key={index} item={item} register={register} errors={errors} />)),
           )}
         </div>
       </div>
