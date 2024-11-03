@@ -1,26 +1,20 @@
+import type { TOptsForm } from '@/types/types';
+
 export function localStorageUtil(): {
-  saveData: (saveFieldName: string, data: string) => void;
-  getData: (saveFieldName: string) => string | null;
-  clearStorage: () => void;
+  saveData: (data: TOptsForm) => void;
+  getData: () => TOptsForm | null;
 } {
-  const saveData = (saveFieldName: string, data: string): void => {
-    localStorage.setItem(saveFieldName, data);
+  const saveData = (data: TOptsForm): void => {
+    localStorage.setItem('form-saved-data', JSON.stringify(data));
   };
 
-  const getData = (saveFieldName: string): string | null => {
-    return localStorage.getItem(saveFieldName);
-  };
-
-  const clearStorage = (): void => {
-    localStorage.removeItem('currentQuestion');
-    localStorage.removeItem('answers');
-    localStorage.removeItem('seconds');
-    localStorage.removeItem('isTestStarted');
+  const getData = (): TOptsForm | null => {
+    const loadedData = localStorage.getItem('form-saved-data');
+    return loadedData ? JSON.parse(loadedData) : null;
   };
 
   return Object.freeze({
     saveData,
     getData,
-    clearStorage,
   });
 }
