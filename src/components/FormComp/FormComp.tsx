@@ -7,7 +7,7 @@ import { Button } from '@nextui-org/react';
 import { useEffect, useState, type ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { FORM_DATA } from '@/constants/const-text-content';
+import { FORM_DATA, TEXT_CONTENT } from '@/constants/const-text-content';
 import type { TOptsForm } from '@/types/types';
 import { localStorageUtil } from '@/utils/localStorageUtil';
 import FormSchema from '@/validation/FormSchema';
@@ -82,7 +82,7 @@ const FormComp = (): ReactElement => {
         <div></div>
         <p>1</p>
         <Button type="submit" color="default" isDisabled={Boolean(Object.keys(errors).length) || !filled}>
-          Следующий шаг
+          {TEXT_CONTENT.controlPanel.button}
         </Button>
       </div>
     </form>
