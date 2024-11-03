@@ -20,8 +20,8 @@ const FormSelect = (props: {
       radius="sm"
       variant="bordered"
     >
-      {props.item.variants!.map((value, index) => (
-        <SelectItem value={value} key={index}>
+      {props.item.variants!.map((value) => (
+        <SelectItem value={value} key={value}>
           {value}
         </SelectItem>
       ))}
