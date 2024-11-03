@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 
 import { FORM_DATA } from '@/constants/const-text-content';
 import type { TOptsForm } from '@/types/types';
+import { localStorageUtil } from '@/utils/localStorageUtil';
 import FormSchema from '@/validation/FormSchema';
 
 import FormInput from '../FormInput/FormInput';
@@ -24,12 +25,23 @@ const FormComp = (): ReactElement => {
   } = useForm<TOptsForm>({
     mode: 'onChange',
     resolver: zodResolver(FormSchema()),
+    defaultValues: {
+      title: localStorageUtil().getData()?.title || '',
+      genre: localStorageUtil().getData()?.genre || '',
+      format: localStorageUtil().getData()?.format || '',
+      unf: localStorageUtil().getData()?.unf || '',
+      country: localStorageUtil().getData()?.country || '',
+      price: localStorageUtil().getData()?.price || '',
+      synopsis: localStorageUtil().getData()?.synopsis || '',
+    },
   });
 
   const [filled, setFilled] = useState(false);
 
   const submit = (data: TOptsForm): void => {
     console.log(data);
+
+    localStorageUtil().saveData(data);
   };
 
   useEffect(() => {
@@ -69,7 +81,7 @@ const FormComp = (): ReactElement => {
       <div className="flex justify-between">
         <div></div>
         <p>1</p>
-        <Button type="submit" color="default" isDisabled={Boolean(errors.title?.message) || !filled}>
+        <Button type="submit" color="default" isDisabled={Boolean(Object.keys(errors).length) || !filled}>
           Следующий шаг
         </Button>
       </div>
