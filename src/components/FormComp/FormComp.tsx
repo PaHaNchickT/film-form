@@ -54,7 +54,7 @@ const FormComp = (): ReactElement => {
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-10">
       <div className="flex gap-5 h-[443px]">
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col justify-between h-full w-[498px]">
           {FORM_DATA.map(
             (item, index) =>
               index < 4 &&
@@ -65,7 +65,7 @@ const FormComp = (): ReactElement => {
               )),
           )}
         </div>
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col justify-between h-full w-[498px]">
           {FORM_DATA.map(
             (item, index) =>
               index >= 4 &&
