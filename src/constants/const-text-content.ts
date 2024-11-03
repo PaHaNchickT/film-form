@@ -2,39 +2,11 @@
 import type { TFieldData } from '@/types/types';
 
 export const TEXT_CONTENT = {
-  header: {
-    headerTitle: 'Тестик',
-  },
-  footer: {
-    madeby: 'Сделал Павел Терно',
-    works: 'Больше работ тут:',
-  },
   welcome: {
     title: '«Мстители» атакуют: тест на знание Кинематографической вселенной Marvel',
     text: 'В детстве мечтали оказаться в Мстителях? Ответьте на вопросы и узнайте, подходите ли Вы для величайшей команды Земли!',
     button: 'Начать',
   },
-  questions: {
-    title: 'Тестирование',
-    answerBtn: 'Ответить',
-    endBtn: 'Закончить',
-    textLowLabel: 'Введите свой ответ:',
-    textHighLabel: 'Напишите развернутый ответ:',
-    errorText: 'Пожалуйста, ответьте на вопрос',
-    isCorrect: 'Необходима проверка вручную',
-  },
-  ending: {
-    success: {
-      title: 'Тестирование завершено!',
-      text: 'Ваши ответы успешно записаны. В течение нескольких дней результат появится в вашем личном кабинете.',
-      button: 'Главная страница',
-    },
-    failure: {
-      title: 'К сожалению, время истекло!',
-      text: 'Не расстраивайтесь! Вы можете попробовать пройти тест заново.',
-      button: 'Попробовать еще',
-    },
-  } as { [key: string]: { [key: string]: string } },
   error: {
     errorTitle: 'Упс!',
     errorMsg: 'Что-то пошло не так!',
@@ -42,6 +14,9 @@ export const TEXT_CONTENT = {
     notFoundMsg: 'Страница не найдена!',
     homeBtn: 'На главную страницу',
     reloadBtn: 'Перезагрузить страницу',
+    validationRequired: 'Заполните поле',
+    validationFormat: 'Неверный формат',
+    validationNumber: 'Введите число',
   },
 };
 
@@ -111,6 +86,7 @@ export const FORM_DATA: TFieldData[] = [
     placeholder: 'Страна',
     type: 'select',
     variants: [
+      'Россия',
       'Австралия',
       'Австрия',
       'Азербайджан',
@@ -282,7 +258,6 @@ export const FORM_DATA: TFieldData[] = [
       'Республика Корея',
       'Республика Македония',
       'Реюньон',
-      'Россия',
       'Руанда',
       'Румыния',
       'Сальвадор',

@@ -15,13 +15,13 @@ const FormSelect = (props: {
       label={props.item.label}
       placeholder={props.item.placeholder}
       labelPlacement="outside"
-      errorMessage={props.errors.title?.message}
-      isInvalid={Boolean(props.errors.title?.message)}
+      errorMessage={props.errors[props.item.name]?.message}
+      isInvalid={Boolean(props.errors[props.item.name]?.message)}
       radius="sm"
       variant="bordered"
     >
-      {props.item.variants!.map((value, index) => (
-        <SelectItem value={value} key={index}>
+      {props.item.variants!.map((value) => (
+        <SelectItem value={value} key={value}>
           {value}
         </SelectItem>
       ))}

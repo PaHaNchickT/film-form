@@ -1,12 +1,15 @@
+/* eslint-disable react-compiler/react-compiler */
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
-// import { zodResolver } from '@hookform/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@nextui-org/react';
-import { type ReactElement } from 'react';
+import { useEffect, useState, type ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { FORM_DATA } from '@/constants/const-text-content';
 import type { TOptsForm } from '@/types/types';
+import FormSchema from '@/validation/FormSchema';
 
 import FormInput from '../FormInput/FormInput';
 import FormSelect from '../FormSelect/FormSelect';
@@ -16,40 +19,24 @@ const FormComp = (): ReactElement => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<TOptsForm>({
     mode: 'onChange',
-    // resolver: zodResolver(QuestionFormSchema()),
-    // defaultValues: {
-    //   title: '',
-    // },
+    resolver: zodResolver(FormSchema()),
   });
+
+  const [filled, setFilled] = useState(false);
 
   const submit = (data: TOptsForm): void => {
     console.log(data);
   };
 
-  // // Props for inputs
-  // const itemStyleProps = {
-  //   isInvalid: Boolean(errors.answer?.message),
-  //   errorMessage: errors.answer?.message,
-  //   size: inputSize,
-  //   className: 'transition-all',
-  // };
-
-  // const itemVariantsProps = {
-  //   color: 'danger' as const,
-  //   ...itemStyleProps,
-  //   className: `${props.opacity}`,
-  // };
-
-  // const itemNonVariantsProps = {
-  //   ...register('answer'),
-  //   value: watch('answer'),
-  //   onChange: handleChange,
-  //   ...itemStyleProps,
-  //   className: `${props.opacity} block sm:inline-block`,
-  // };
+  useEffect(() => {
+    setFilled(
+      Boolean(watch('title').length && watch('genre').length && watch('format').length && watch('country').length),
+    );
+  }, [watch('title'), watch('genre'), watch('format'), watch('country')]);
 
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-10">
@@ -82,7 +69,7 @@ const FormComp = (): ReactElement => {
       <div className="flex justify-between">
         <div></div>
         <p>1</p>
-        <Button type="submit" color="default" isDisabled={Boolean(errors.title?.message)}>
+        <Button type="submit" color="default" isDisabled={Boolean(errors.title?.message) || !filled}>
           Следующий шаг
         </Button>
       </div>
