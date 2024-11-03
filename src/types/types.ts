@@ -2,7 +2,7 @@ export type TOptsForm = {
   title: string;
   genre: string;
   format: string;
-  unf: number;
+  unf: string;
   country: string;
   price: string;
   synopsis: string;
