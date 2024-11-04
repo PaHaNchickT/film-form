@@ -17,8 +17,16 @@ const FormSelect = (props: {
       labelPlacement="outside"
       errorMessage={props.errors[props.item.name]?.message}
       isInvalid={Boolean(props.errors[props.item.name]?.message)}
+      size="lg"
       radius="sm"
       variant="bordered"
+      classNames={{
+        label: [`pb-2 text-xs sm:text-base ${props.item.tracking && props.item.tracking}`],
+        selectorIcon: ['opacity-0'],
+        trigger: ['h-[58px]'],
+        helperWrapper: ['absolute right-[18px] top-[15px]'],
+        errorMessage: ['text-base tracking-tight'],
+      }}
     >
       {props.item.variants!.map((value) => (
         <SelectItem value={value} key={value}>

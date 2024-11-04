@@ -1,9 +1,7 @@
 /* eslint-disable react-compiler/react-compiler */
 /* eslint-disable react-hooks/exhaustive-deps */
-'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@nextui-org/react';
 import { useEffect, useState, type ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -12,6 +10,7 @@ import type { TOptsForm } from '@/types/types';
 import { localStorageUtil } from '@/utils/localStorageUtil';
 import FormSchema from '@/validation/FormSchema';
 
+import ControlPanel from '../ControlPanel/ControlPanel';
 import FormInput from '../FormInput/FormInput';
 import FormSelect from '../FormSelect/FormSelect';
 import FormTextarea from '../FormTextarea/FormTextarea';
@@ -51,40 +50,48 @@ const FormComp = (): ReactElement => {
   }, [watch('title'), watch('genre'), watch('format'), watch('country')]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-10">
-      <div className="flex gap-5 h-[443px]">
-        <div className="flex flex-col justify-between h-full w-[498px]">
-          {FORM_DATA.map(
-            (item, index) =>
-              index < 4 &&
-              (item.type === 'text' ? (
-                <FormInput key={index} item={item} register={register} errors={errors} />
-              ) : (
-                <FormSelect key={index} item={item} register={register} errors={errors} />
-              )),
-          )}
-        </div>
-        <div className="flex flex-col justify-between h-full w-[498px]">
-          {FORM_DATA.map(
-            (item, index) =>
-              index >= 4 &&
-              ((item.type === 'text' && <FormInput key={index} item={item} register={register} errors={errors} />) ||
-                (item.type === 'select' && (
+    <form
+      onSubmit={handleSubmit(submit)}
+      className="flex flex-col gap-[50px] font-['Helvetica-Neue',sans-serif] xl:gap-[98px]"
+    >
+      <div className="flex flex-col items-center gap-8 flex-wrap xl:flex-row xl:gap-[130px]">
+        <div className="flex flex-col justify-between gap-8 w-full sm:w-[520px] xl:min-h-[458px]">
+          <div className="flex flex-col gap-8">
+            {FORM_DATA.map(
+              (item, index) =>
+                index < 3 &&
+                (item.type === 'text' ? (
+                  <FormInput key={index} item={item} register={register} errors={errors} />
+                ) : (
                   <FormSelect key={index} item={item} register={register} errors={errors} />
-                )) ||
-                (item.type === 'textarea' && (
-                  <FormTextarea key={index} item={item} register={register} errors={errors} />
-                ))),
-          )}
+                )),
+            )}
+          </div>
+          <div>
+            <FormInput item={FORM_DATA[3]} register={register} errors={errors} />
+          </div>
+        </div>
+        <div className="flex flex-col justify-between gap-8 w-full sm:w-[520px] xl:min-h-[458px]">
+          <div className="flex flex-col gap-[60px]">
+            {FORM_DATA.map(
+              (item, index) =>
+                index > 3 &&
+                index < FORM_DATA.length - 1 &&
+                ((item.type === 'text' && <FormInput key={index} item={item} register={register} errors={errors} />) ||
+                  (item.type === 'select' && (
+                    <FormSelect key={index} item={item} register={register} errors={errors} />
+                  )) ||
+                  (item.type === 'textarea' && (
+                    <FormTextarea key={index} item={item} register={register} errors={errors} />
+                  ))),
+            )}
+          </div>
+          <div>
+            <FormTextarea item={FORM_DATA[FORM_DATA.length - 1]} register={register} errors={errors} />
+          </div>
         </div>
       </div>
-      <div className="flex justify-between">
-        <div></div>
-        <p>1</p>
-        <Button type="submit" color="default" isDisabled={Boolean(Object.keys(errors).length) || !filled}>
-          Следующий шаг
-        </Button>
-      </div>
+      <ControlPanel errors={errors} filled={filled} />
     </form>
   );
 };

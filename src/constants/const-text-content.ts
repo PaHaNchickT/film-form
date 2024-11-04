@@ -3,9 +3,11 @@ import type { TFieldData } from '@/types/types';
 
 export const TEXT_CONTENT = {
   welcome: {
-    title: '«Мстители» атакуют: тест на знание Кинематографической вселенной Marvel',
-    text: 'В детстве мечтали оказаться в Мстителях? Ответьте на вопросы и узнайте, подходите ли Вы для величайшей команды Земли!',
-    button: 'Начать',
+    title: 'Производственные параметры фильма',
+    button: 'Отменить заполнение',
+  },
+  controlPanel: {
+    button: 'Следующий шаг',
   },
   error: {
     errorTitle: 'Упс!',
@@ -73,6 +75,7 @@ export const FORM_DATA: TFieldData[] = [
     placeholder: 'Формат',
     type: 'select',
     variants: ['для онлайн-платформ', 'для большого экрана', 'для интернета', 'другое'],
+    tracking: 'tracking-[-0.0116em] text-left',
   },
   {
     name: 'unf',
@@ -334,12 +337,14 @@ export const FORM_DATA: TFieldData[] = [
       'Ямайка',
       'Япония',
     ],
+    tracking: 'tracking-wide text-left',
   },
   {
     name: 'price',
     label: 'Сведения о сметной стоимости производства фильма на территории Нижегородской области, если есть',
     placeholder: 'Сметная стоимость',
     type: 'text',
+    tracking: 'tracking-wide w-[450px]',
   },
   {
     name: 'synopsis',

@@ -17,8 +17,14 @@ const FormTextarea = (props: {
       labelPlacement="outside"
       errorMessage={props.errors[props.item.name]?.message}
       isInvalid={Boolean(props.errors[props.item.name]?.message)}
+      size="lg"
       radius="sm"
       variant="bordered"
+      disableAutosize
+      rows={6}
+      classNames={{
+        label: 'text-xs sm:text-base pb-3',
+      }}
     />
   );
 };

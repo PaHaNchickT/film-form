@@ -10,7 +10,7 @@ export default function NotFound(): ReactElement {
   const router = useRouter();
 
   return (
-    <div className="flex justify-center items-center text-center">
+    <div className="flex justify-center items-center text-center w-screen h-screen">
       <div className="flex flex-col z-[2] gap-5 items-center">
         <div>
           <p className="text-3xl text-center sm:text-4xl">{TEXT_CONTENT.error.notFoundTitle}</p>

@@ -7,7 +7,7 @@ import { TEXT_CONTENT } from '@/constants/const-text-content';
 
 const Error = (): ReactElement => {
   return (
-    <div className="flex justify-center items-center text-center">
+    <div className="flex justify-center items-center text-center w-screen h-screen">
       <div className="flex flex-col z-[2] gap-5 items-center">
         <div>
           <p className="text-3xl text-center sm:text-4xl">{TEXT_CONTENT.error.errorTitle}</p>
