@@ -26,15 +26,15 @@
 - **Next.js** - для реализации SSR;
 - **NextUI** - в качестве библиотеки компонентов;
 - **TailWind** - для стилизации;
-- **React Hook Form и Zod** - для реализации форм и их валидации;
+- **React Hook Form и Zod** - для реализации формы и её валидации;
 - **ESLint, Prettier и Husky** - для линтинга и форматирования.
 
 ## Инструкции по запуску проекта локально
 
 1. Установите Node.js
-2. "Форкните" данный репозиторий: https://github.com/PaHaNchickT/mvp-testing-app
-3. Склонируйте только что созданный репозиторий: `https://github.com/<%your_github_username%>/mvp-testing-app/`
-4. Перейдите в папку `mvp-testing-app`
+2. "Форкните" данный репозиторий: https://github.com/PaHaNchickT/film-form
+3. Склонируйте только что созданный репозиторий: `https://github.com/<%your_github_username%>/film-form/`
+4. Перейдите в папку `film-form`
 5. Чтобы установить все зависимости, используйте `npm install`
 6. Для запуска локального сервера используйте `npm run dev`
 7. Проект запущен успешно!
