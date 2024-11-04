@@ -12,9 +12,9 @@ const App = (): ReactElement => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <main className="flex justify-center items-center py-10 min-w-screen min-h-screen">
+    <main className="flex justify-center items-center p-10 min-w-screen min-h-screen">
       {mounted ? (
-        <div className="flex flex-col gap-[124px]">
+        <div className="flex flex-col gap-[70px] lg:gap-[100px] xl:gap-[124px]">
           <WelcomePanel />
           <FormComp />
         </div>
