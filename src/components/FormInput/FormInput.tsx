@@ -22,6 +22,7 @@ const FormInput = (props: {
       variant="bordered"
       classNames={{
         input: ['h-[54px]'],
+        errorMessage: ['absolute top-[-28px] right-[14px]']
       }}
     />
   );
