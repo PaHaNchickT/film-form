@@ -25,7 +25,6 @@ const FormSelect = (props: {
         errorMessage: ['absolute top-[-28px] right-[14px]'],
         selectorIcon: ['opacity-0'],
         trigger: ['h-[58px]'],
-        // mainWrapper: ['h-[80px]']
       }}
     >
       {props.item.variants!.map((value) => (

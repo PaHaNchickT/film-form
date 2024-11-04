@@ -69,17 +69,23 @@ const FormComp = (): ReactElement => {
           </div>
         </div>
         <div className="flex flex-col justify-between h-full w-[520px]">
-          {FORM_DATA.map(
-            (item, index) =>
-              index > 3 &&
-              ((item.type === 'text' && <FormInput key={index} item={item} register={register} errors={errors} />) ||
-                (item.type === 'select' && (
-                  <FormSelect key={index} item={item} register={register} errors={errors} />
-                )) ||
-                (item.type === 'textarea' && (
-                  <FormTextarea key={index} item={item} register={register} errors={errors} />
-                ))),
-          )}
+          <div className="flex flex-col gap-[60px]">
+            {FORM_DATA.map(
+              (item, index) =>
+                index > 3 &&
+                index < FORM_DATA.length - 1 &&
+                ((item.type === 'text' && <FormInput key={index} item={item} register={register} errors={errors} />) ||
+                  (item.type === 'select' && (
+                    <FormSelect key={index} item={item} register={register} errors={errors} />
+                  )) ||
+                  (item.type === 'textarea' && (
+                    <FormTextarea key={index} item={item} register={register} errors={errors} />
+                  ))),
+            )}
+          </div>
+          <div>
+            <FormTextarea item={FORM_DATA[FORM_DATA.length - 1]} register={register} errors={errors} />
+          </div>
         </div>
       </div>
       <ControlPanel errors={errors} filled={filled} />
