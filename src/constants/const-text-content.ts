@@ -75,6 +75,7 @@ export const FORM_DATA: TFieldData[] = [
     placeholder: 'Формат',
     type: 'select',
     variants: ['для онлайн-платформ', 'для большого экрана', 'для интернета', 'другое'],
+    tracking: 'tracking-[-0.0116em]',
   },
   {
     name: 'unf',
@@ -336,12 +337,14 @@ export const FORM_DATA: TFieldData[] = [
       'Ямайка',
       'Япония',
     ],
+    tracking: 'tracking-wide',
   },
   {
     name: 'price',
     label: 'Сведения о сметной стоимости производства фильма на территории Нижегородской области, если есть',
     placeholder: 'Сметная стоимость',
     type: 'text',
+    tracking: 'tracking-wide w-[450px]',
   },
   {
     name: 'synopsis',

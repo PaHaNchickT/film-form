@@ -12,8 +12,8 @@ const ControlPanel = (props: { errors: FieldErrors<TOptsForm>; filled: boolean }
 
   return (
     <div className="flex justify-between">
-      <div className="w-[224px]"></div>
-      <div className="flex gap-[5px] items-center font-['Inter_Tight',sans-serif]">
+      <div className="w-[222px]"></div>
+      <div className="flex gap-[4px] items-center font-['Inter_Tight',sans-serif]">
         <Button
           className={`rotate-180 min-w-0 p-0 w-[40px] h-[40px] bg-transparent ${selected === 1 && 'opacity-0'}`}
           radius="full"

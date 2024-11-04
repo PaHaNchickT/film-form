@@ -22,10 +22,9 @@ const FormInput = (props: {
       variant="bordered"
       size="lg"
       classNames={{
-        // label: ['bg-warning '],
         helperWrapper: ['text-sm absolute right-[14px] top-[15px]'],
         inputWrapper: ['h-[58px]'],
-        label: ['tracking-tight pb-2'],
+        label: [`pb-2 ${props.item.tracking && props.item.tracking}`],
         errorMessage: ['text-sm'],
       }}
     />

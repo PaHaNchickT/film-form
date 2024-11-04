@@ -53,20 +53,25 @@ const FormComp = (): ReactElement => {
     <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-[98px] font-['Helvetica-Neue',sans-serif]">
       <div className="flex gap-[130px] h-[458px]">
         <div className="flex flex-col justify-between h-full w-[520px]">
-          {FORM_DATA.map(
-            (item, index) =>
-              index < 4 &&
-              (item.type === 'text' ? (
-                <FormInput key={index} item={item} register={register} errors={errors} />
-              ) : (
-                <FormSelect key={index} item={item} register={register} errors={errors} />
-              )),
-          )}
+          <div className="flex flex-col gap-8">
+            {FORM_DATA.map(
+              (item, index) =>
+                index < 3 &&
+                (item.type === 'text' ? (
+                  <FormInput key={index} item={item} register={register} errors={errors} />
+                ) : (
+                  <FormSelect key={index} item={item} register={register} errors={errors} />
+                )),
+            )}
+          </div>
+          <div>
+            <FormInput item={FORM_DATA[3]} register={register} errors={errors} />
+          </div>
         </div>
         <div className="flex flex-col justify-between h-full w-[520px]">
           {FORM_DATA.map(
             (item, index) =>
-              index >= 4 &&
+              index > 3 &&
               ((item.type === 'text' && <FormInput key={index} item={item} register={register} errors={errors} />) ||
                 (item.type === 'select' && (
                   <FormSelect key={index} item={item} register={register} errors={errors} />

@@ -16,4 +16,5 @@ export type TFieldData = {
   placeholder: string;
   type: 'text' | 'select' | 'textarea';
   variants?: string[];
+  tracking?: string;
 };
