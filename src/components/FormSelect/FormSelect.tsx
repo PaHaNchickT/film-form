@@ -22,9 +22,10 @@ const FormSelect = (props: {
       variant="bordered"
       classNames={{
         label: [`pb-2 ${props.item.tracking && props.item.tracking}`],
-        errorMessage: ['absolute top-[-28px] right-[14px]'],
         selectorIcon: ['opacity-0'],
         trigger: ['h-[58px]'],
+        helperWrapper: ['absolute right-[18px] top-[15px]'],
+        errorMessage: ['text-base tracking-tight'],
       }}
     >
       {props.item.variants!.map((value) => (
