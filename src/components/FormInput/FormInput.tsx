@@ -20,11 +20,13 @@ const FormInput = (props: {
       isInvalid={Boolean(props.errors[props.item.name]?.message)}
       radius="sm"
       variant="bordered"
-      size='lg'
+      size="lg"
       classNames={{
-        base: ['text-lg'],
-        input: ['h-[54px]'],
-        errorMessage: ['absolute top-[-28px] right-[14px]'],
+        // label: ['bg-warning '],
+        helperWrapper: ['text-sm absolute right-[14px] top-[15px]'],
+        inputWrapper: ['h-[58px]'],
+        label: ['tracking-tight pb-2'],
+        errorMessage: ['text-sm'],
       }}
     />
   );

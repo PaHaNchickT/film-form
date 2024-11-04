@@ -14,7 +14,7 @@ const App = (): ReactElement => {
   return (
     <main className="flex justify-center items-center py-10">
       {mounted ? (
-        <div className="flex flex-col gap-[120px]">
+        <div className="flex flex-col gap-[124px]">
           <WelcomePanel />
           <FormComp />
         </div>
