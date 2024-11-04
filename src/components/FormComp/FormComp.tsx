@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect, useState, type ReactElement } from 'react';
 import { useForm } from 'react-hook-form';
 
+import { FORM_DEFAULT_VALUES } from '@/constants/const-form-init-values';
 import { FORM_DATA } from '@/constants/const-text-content';
 import type { TOptsForm } from '@/types/types';
 import { localStorageUtil } from '@/utils/localStorageUtil';
@@ -24,15 +25,7 @@ const FormComp = (): ReactElement => {
   } = useForm<TOptsForm>({
     mode: 'onChange',
     resolver: zodResolver(FormSchema()),
-    defaultValues: {
-      title: localStorageUtil().getData()?.title || '',
-      genre: localStorageUtil().getData()?.genre || '',
-      format: localStorageUtil().getData()?.format || '',
-      unf: localStorageUtil().getData()?.unf || '',
-      country: localStorageUtil().getData()?.country || '',
-      price: localStorageUtil().getData()?.price || '',
-      synopsis: localStorageUtil().getData()?.synopsis || '',
-    },
+    defaultValues: localStorageUtil().getData() ? localStorageUtil().getData()! : FORM_DEFAULT_VALUES,
   });
 
   const [filled, setFilled] = useState(false);
