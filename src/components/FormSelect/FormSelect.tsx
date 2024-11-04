@@ -17,6 +17,7 @@ const FormSelect = (props: {
       labelPlacement="outside"
       errorMessage={props.errors[props.item.name]?.message}
       isInvalid={Boolean(props.errors[props.item.name]?.message)}
+      size='lg'
       radius="sm"
       variant="bordered"
     >

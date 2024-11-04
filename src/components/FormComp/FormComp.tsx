@@ -50,9 +50,9 @@ const FormComp = (): ReactElement => {
   }, [watch('title'), watch('genre'), watch('format'), watch('country')]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-10 font-['Helvetica-Neue',sans-serif]">
-      <div className="flex gap-[180px] h-[443px]">
-        <div className="flex flex-col justify-between h-full w-[498px]">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-[100px] font-['Helvetica-Neue',sans-serif]">
+      <div className="flex gap-[130px] h-[460px]">
+        <div className="flex flex-col justify-between h-full w-[520px]">
           {FORM_DATA.map(
             (item, index) =>
               index < 4 &&
@@ -63,7 +63,7 @@ const FormComp = (): ReactElement => {
               )),
           )}
         </div>
-        <div className="flex flex-col justify-between h-full w-[498px]">
+        <div className="flex flex-col justify-between h-full w-[520px]">
           {FORM_DATA.map(
             (item, index) =>
               index >= 4 &&

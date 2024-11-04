@@ -5,7 +5,7 @@ import { TEXT_CONTENT } from '@/constants/const-text-content';
 
 const WelcomePanel = (): ReactElement => {
   return (
-    <div className="flex justify-between pt-10">
+    <div className="flex justify-between">
       <h1 className="text-5xl w-[564px] font-['Inter_Tight',sans-serif] font-semibold tracking-[-0.022em] leading-tight">
         {TEXT_CONTENT.welcome.title}
       </h1>
