@@ -75,7 +75,7 @@ export const FORM_DATA: TFieldData[] = [
     placeholder: 'Формат',
     type: 'select',
     variants: ['для онлайн-платформ', 'для большого экрана', 'для интернета', 'другое'],
-    tracking: 'tracking-[-0.0116em]',
+    tracking: 'tracking-[-0.0116em] text-left',
   },
   {
     name: 'unf',
@@ -337,7 +337,7 @@ export const FORM_DATA: TFieldData[] = [
       'Ямайка',
       'Япония',
     ],
-    tracking: 'tracking-wide',
+    tracking: 'tracking-wide text-left',
   },
   {
     name: 'price',

@@ -23,7 +23,7 @@ const FormTextarea = (props: {
       disableAutosize
       rows={6}
       classNames={{
-        label: 'text-base pb-3',
+        label: 'text-xs sm:text-base pb-3',
       }}
     />
   );

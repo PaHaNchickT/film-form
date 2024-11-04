@@ -50,9 +50,12 @@ const FormComp = (): ReactElement => {
   }, [watch('title'), watch('genre'), watch('format'), watch('country')]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-[98px] font-['Helvetica-Neue',sans-serif]">
-      <div className="flex gap-[130px] h-[458px]">
-        <div className="flex flex-col justify-between h-full w-[520px]">
+    <form
+      onSubmit={handleSubmit(submit)}
+      className="flex flex-col gap-[50px] font-['Helvetica-Neue',sans-serif] xl:gap-[98px]"
+    >
+      <div className="flex flex-col items-center gap-8 flex-wrap xl:flex-row xl:gap-[130px]">
+        <div className="flex flex-col justify-between gap-8 w-full sm:w-[520px] xl:min-h-[458px]">
           <div className="flex flex-col gap-8">
             {FORM_DATA.map(
               (item, index) =>
@@ -68,7 +71,7 @@ const FormComp = (): ReactElement => {
             <FormInput item={FORM_DATA[3]} register={register} errors={errors} />
           </div>
         </div>
-        <div className="flex flex-col justify-between h-full w-[520px]">
+        <div className="flex flex-col justify-between gap-8 w-full sm:w-[520px] xl:min-h-[458px]">
           <div className="flex flex-col gap-[60px]">
             {FORM_DATA.map(
               (item, index) =>

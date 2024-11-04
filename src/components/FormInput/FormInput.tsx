@@ -24,7 +24,7 @@ const FormInput = (props: {
       classNames={{
         helperWrapper: ['absolute right-[18px] top-[15px]'],
         inputWrapper: ['h-[58px]'],
-        label: [`pb-2 ${props.item.tracking && props.item.tracking}`],
+        label: [`pb-2 text-xs sm:text-base ${props.item.tracking && props.item.tracking}`],
         errorMessage: ['text-base tracking-tight'],
       }}
     />
