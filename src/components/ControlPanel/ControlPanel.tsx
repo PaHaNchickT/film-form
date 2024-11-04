@@ -11,8 +11,8 @@ const ControlPanel = (props: { errors: FieldErrors<TOptsForm>; filled: boolean }
   const initialArray = [1, 2, 3, 4];
 
   return (
-    <div className="flex justify-between">
-      <div className="w-[222px]"></div>
+    <div className="flex flex-col justify-between items-center gap-5 xl:flex-row">
+      <div className="w-[222px] hidden xl:block"></div>
       <div className="flex gap-[4px] items-center font-['Inter_Tight',sans-serif]">
         <Button
           className={`rotate-180 min-w-0 p-0 w-[40px] h-[40px] bg-transparent ${selected === 1 && 'opacity-0'}`}
