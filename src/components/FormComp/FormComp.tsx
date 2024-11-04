@@ -50,7 +50,7 @@ const FormComp = (): ReactElement => {
   }, [watch('title'), watch('genre'), watch('format'), watch('country')]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-10">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-10 font-['Helvetica-Neue',sans-serif]">
       <div className="flex gap-5 h-[443px]">
         <div className="flex flex-col justify-between h-full w-[498px]">
           {FORM_DATA.map(
